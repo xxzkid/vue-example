@@ -26,7 +26,7 @@ export default {
       this.$http.get("/static/test.json?_t="+new Date().getTime()).then(function(response){
         var data = response.data;
         if(data && data.c === "0") {
-          this.$router.push({path: '/list'})
+          this.$router.push({path: '/movies'})
         }
       });
     },

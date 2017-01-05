@@ -4,9 +4,9 @@ import Vue from 'vue';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import App from './App';
-import Index from './components/Index';
+import Movies from './components/Movies';
 import Login from './components/Login';
-import List from './components/List';
+import Movie from './components/Movie';
 
 
 //开启debug模式
@@ -15,6 +15,10 @@ Vue.config.debug = true;
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
+Vue.http.options.headers={
+	'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'
+};
+
 var routes = [
 	// {
 	// 	path:'/',
@@ -22,15 +26,19 @@ var routes = [
 	// },
 	{
 		path: '/',
-		component: Index
+		redirect: '/movies'
+	},
+	{
+		path: '/movies',
+		component: Movies
+	},
+	{
+		path: '/movies/:id',
+		component: Movie
 	},
     {
     	path: '/login',
     	component: Login
-    },
-    {
-    	path: '/list',
-    	component: List
     }
 ];
 
