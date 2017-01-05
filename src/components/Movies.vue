@@ -3,7 +3,7 @@
     <ul>
       <li v-for="item in movies">
         <router-link :to="'/movies/'+item.id">
-            <div class="cover-wp" data-isnew="false" v-bind:data-id="''+item.id">
+            <div v-bind:data-id="''+item.id">
             <img :src="item.cover" v-bind:alt="''+item.title" v-bind:width="''+item.cover_x/10" v-bind:height="''+ item.cover_y/10">
             </div>
             <p>{{item.title}}<strong v-text="item.rate"></strong></p>

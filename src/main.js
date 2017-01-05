@@ -16,7 +16,7 @@ Vue.use(VueResource);
 Vue.use(VueRouter);
 
 Vue.http.options.headers={
-	'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'
+	//'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'
 };
 
 var routes = [
